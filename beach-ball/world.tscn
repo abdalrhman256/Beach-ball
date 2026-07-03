@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cvc6fbsulvfxx"]
+
+[ext_resource type="Texture2D" uid="uid://clm6j3ie8b7ij" path="res://icon.svg" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://cbvrv0mbvxpbp" path="res://player1.tscn" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://cgv1vbpl8cy6d" path="res://plyer_2.tscn" id="3_tlwt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
+size = Vector2(1174, 62)
+
+[node name="Node2D" type="Node2D" unique_id=1418854797]
+position = Vector2(-3, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1645294822]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1093817754]
+position = Vector2(588, 676)
+scale = Vector2(9.171875, 0.4804691)
+texture = ExtResource("1_fj7yv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1246244011]
+position = Vector2(588, 676)
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="Plyer1" parent="." unique_id=831453373 instance=ExtResource("2_tlwt5")]
+
+[node name="Plyer2" parent="." unique_id=759791256 instance=ExtResource("3_tlwt5")]
+position = Vector2(517, -41)
