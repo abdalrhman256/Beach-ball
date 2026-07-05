@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cvc6fbsulvfxx"]
+
+[ext_resource type="Texture2D" uid="uid://clm6j3ie8b7ij" path="res://icon.svg" id="1_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cbvrv0mbvxpbp" path="res://player-1/player1.tscn" id="2_k0juu"]
+[ext_resource type="PackedScene" uid="uid://cgv1vbpl8cy6d" path="res://player-2/plyer_2.tscn" id="3_71j4m"]
+[ext_resource type="PackedScene" uid="uid://de4lqo4r5fyrd" path="res://ball.tscn" id="4_k0juu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
+size = Vector2(560, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
+size = Vector2(551, 58.5)
+
+[node name="world" type="Node2D" unique_id=1418854797]
+position = Vector2(12, 2)
+
+[node name="background" type="Node2D" parent="." unique_id=264221156]
+
+[node name="Sprite2D" type="Sprite2D" parent="background" unique_id=1751440399]
+
+[node name="left" type="StaticBody2D" parent="." unique_id=1645294822]
+position = Vector2(575, 589)
+
+[node name="Sprite2D" type="Sprite2D" parent="left" unique_id=1093817754]
+position = Vector2(-311.5, 3.9999862)
+scale = Vector2(4.3828125, 0.46874973)
+texture = ExtResource("1_4wyf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left" unique_id=1246244011]
+position = Vector2(-312, 3.5)
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="right" type="StaticBody2D" parent="." unique_id=1375263350]
+
+[node name="Sprite2D" type="Sprite2D" parent="right" unique_id=776019409]
+position = Vector2(868, 594.5)
+scale = Vector2(4.2968745, 0.46093786)
+texture = ExtResource("1_4wyf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=1689509271]
+position = Vector2(867.5, 594.25)
+shape = SubResource("RectangleShape2D_k0juu")
+
+[node name="Plyer2" parent="." unique_id=759791256 instance=ExtResource("3_71j4m")]
+position = Vector2(591, 205)
+
+[node name="Plyer1" parent="." unique_id=831453373 instance=ExtResource("2_k0juu")]
+position = Vector2(-56, 279)
+
+[node name="RigidBody2D" parent="." unique_id=442684103 instance=ExtResource("4_k0juu")]
+position = Vector2(-51, -194)
